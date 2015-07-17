@@ -13,48 +13,47 @@
         
     </div>
     <div class="col-lg-6 col-md-6">
-        <div class="container" ng-controller="weatherController">
+        <div class="container">
             <h2>Live Weather Report</h2>
             <div class="panel-group" id="accordion">
-                <div class="panel panel-default">
+                <div class="panel panel-default" ng-controller="weatherController" ng-init="getWeatherData('2147714')">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Sydney, Austalia</a>
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Sydney</a>
                         </h4>
                     </div>
                     <div id="collapse1" class="panel-collapse collapse in">
                         <div class="panel-body">
-                            
+                            <h3>{{weatherData.name}}</h3>
+                            <h2>
+                                <img ng-src="{{weatherData.weatherIcon}}" /> {{weatherData.temperature}} °C
+                            </h2>
+                            <h4>
+                                wind {{weatherData.wind}}m/s. clouds {{weatherData.clouds}}%
+                            </h4>
                         </div>
                     </div>
                 </div>
-                <div class="panel panel-default">
+                <div class="panel panel-default" ng-controller="weatherController" ng-init="getWeatherData('1277333')">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Chennai, India</a>
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Bangalore</a>
                         </h4>
                     </div>
                     <div id="collapse2" class="panel-collapse collapse">
                         <div class="panel-body">
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Search by city</a>
-                        </h4>
-                    </div>
-                    <div id="collapse3" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            
+                            <h3>{{weatherData.name}}</h3>
+                            <h2>
+                                <img ng-src="{{weatherData.weatherIcon}}" /> {{weatherData.temperature}} °C
+                            </h2>
+                            <h4>
+                                wind {{weatherData.wind}}m/s. clouds {{weatherData.clouds}}%
+                            </h4>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 
